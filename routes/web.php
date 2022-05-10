@@ -29,6 +29,7 @@ Route::get('/products/edit/{id}', [ProductsController::class, 'edit']);
 Route::post('/products/update',[ProductsController::class,'update'])->name('products/update');
 Route::get('/products/delete/{id}', [ProductsController::class, 'delete']);
 Route::get('/products/search/{id}', [ProductsController::class, 'search'])->name('products/search');
+//how to commit
 
 
 
