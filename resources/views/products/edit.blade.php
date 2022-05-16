@@ -6,28 +6,16 @@
  <div class="card">
  <div class="card-header">{{ __('Products  Edit') }}</div>
  <div class="card-body">
- <form method="POST" action="{{ route('products/register') }}"
+ <form method="POST" action="{{ route('products/update') }}"
 >
  @csrf
+ <input type="hidden" value="{{ $products->id }}" name ='id'>
  <div class="form-group row">
- <label for="name" class="col-md-4 col-formlabel text-md-right">{{ __('Products') }}</label>
+ <label for="" class="col-md-4 col-formlabel text-md-right">{{ __('name') }}</label>
  <div class="col-md-6">
  <input id="name" type="text" class="formcontrol @error('name') isinvalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="
 name" autofocus>
  @error('name')
- <span class="invalid-feedback" role="alert">
- <strong>{{ $message }}</strong>
- </span>
- @enderror
- </div>
- </div>
- @csrf
- <div class="form-group row">
- <label for="id" class="col-md-4 col-formlabel text-md-right">{{ __('id') }}</label>
- <div class="col-md-6">
- <input id="id" type="text" class="formcontrol @error('id') isinvalid @enderror" name="id" value="{{ old('id') }}" required autocomplete="
-id" autofocus>
- @error('id')
  <span class="invalid-feedback" role="alert">
  <strong>{{ $message }}</strong>
  </span>
