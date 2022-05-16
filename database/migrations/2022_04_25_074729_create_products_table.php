@@ -14,13 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->string('id')->notnullable();
+            $table->id();
             $table->string('name');
             $table->string('unit');
             $table->String('price');
             $table->string('quantity');
             $table->timestamps();
+            $table->unsignedBigInteger('Catagory_id');
+          $table->foreign('Catagory_id')->reference('d')->on('catagories')->onDelete('cascade');
         });
+
     }
 
     /**

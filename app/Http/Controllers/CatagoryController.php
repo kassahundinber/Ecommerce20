@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 use App\Models\Catagory;
+
 use Illuminate\Http\Request;
 
 class CatagoryController extends Controller
 {
-        //For testing purpose, use hard coded data, till we design UI
-        
-  public function register()
+    public function register()
   {
   return view('Catagory.register');
   }
@@ -18,7 +17,6 @@ class CatagoryController extends Controller
       $Catagory =new Catagory();
       $Catagory->id = $request->id;
       $Catagory->name = $request->name;
-      
      $is_saved = $Catagory->save();
     if($is_saved){
     echo " MR KASSAHUN YOUR DATA Record saved successfully.";
@@ -46,7 +44,6 @@ class CatagoryController extends Controller
     ]);
     $Catagory= Catagory::find($request->id);
     $Catagory->name = $request->name;
-    
     $Catagory->save();
     return redirect('Catagory/list');
     }
@@ -59,7 +56,8 @@ class CatagoryController extends Controller
 
 public function search($id)
     {
-        $Catagory = Catagory::where('id',$id)->first();
+     $Catagory = Catagory::where('id',$id)->first();
      return view('Catagory.search', compact('Catagory'));
     } 
   }
+

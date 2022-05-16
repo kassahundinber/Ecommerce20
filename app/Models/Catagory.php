@@ -11,6 +11,14 @@ class Catagory extends Model
     protected $fillable = [
         'id',
         'name'
+        
         ];
+        public function Products()
+        {
+            return $this->hasmany(Products::class);
+        
+        }
        
 }
+
+

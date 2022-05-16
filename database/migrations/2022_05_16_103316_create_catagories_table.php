@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Catagory', function (Blueprint $table) {
-            $table->string('id')->notnullable();
-            $table->string('name');
-           
-            $table->timestamps();
+        Schema::create('catagories', function (Blueprint $table) {
+                $table->string('id');
+                $table->string('name');
+                $table->timestamps();
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Catagory');
+        Schema::dropIfExists('catagories');
     }
 };
